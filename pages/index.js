@@ -8,10 +8,11 @@ export default function Home() {
       <Head>
         <title>Equilíbrio e Correção de solo</title>
         <meta name="description" content="Aplicação para gerenciamento do equilíbrio e correção de solo." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/projeto_graos_logo.png" />
       </Head>
 
       <main className={styles.main}>
+        <Image src="/projeto_graos_logo.png" alt="logo do projeto grãos" width={50} height={50}/>
         <h1 className={styles.title}>
           Equilíbrio e correção de solo
         </h1>
@@ -35,7 +36,15 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>EMATER - {new Date().getFullYear()}</footer>
+      <footer className={styles.footer}>
+        <p>
+          EMATER - {new Date().getFullYear()}
+          <br />
+          <span className={styles.logo}>
+            <Image src="/emater_logo.png" alt="Emater Logo" width={72} height={16} />
+          </span>
+        </p>
+      </footer>
     </div>
   )
 }
