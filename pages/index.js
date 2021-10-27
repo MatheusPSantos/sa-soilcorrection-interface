@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Image src="/projeto_graos_logo.png" alt="logo do projeto grãos" width={50} height={50}/>
+        <Image src="/projeto_graos_logo.png" alt="logo do projeto grãos" width={50} height={50} />
         <h1 className={styles.title}>
           Equilíbrio e correção de solo
         </h1>
@@ -22,17 +23,23 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
-            <h2>Correção/Recuperação de Fósforo &rarr;</h2>
-          </a>
+          <Link href="/Fosforo">
+            <a className={styles.card}>
+              <h2>Correção/Recuperação de Fósforo &rarr;</h2>
+            </a>
+          </Link>
 
-          <a href="n" className={styles.card}>
-            <h2>Correção/Recuperação de Potássio &rarr;</h2>
-          </a>
+          <Link href="/Potassio">
+            <a className={styles.card}>
+              <h2>Correção/Recuperação de Potássio &rarr;</h2>
+            </a>
+          </Link>
 
-          <a href="" className={styles.card}>
-            <h2>Correção/Recuperação de Cálcio e Magnésio &rarr;</h2>
-          </a>
+          <Link href="/Calcio_Magnesio">
+            <a className={styles.card}>
+              <h2>Correção/Recuperação de Cálcio e Magnésio &rarr;</h2>
+            </a>
+          </Link>
         </div>
       </main>
 
