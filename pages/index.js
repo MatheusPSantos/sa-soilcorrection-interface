@@ -25,7 +25,7 @@ export default function Home() {
 
         <section className={styles.grid_left}>
           <div className={styles.row}>
-            <InputField>
+            <InputField className="w-700">
               <label htmlFor="produtor">Produtor:</label>
               <Input
                 name="produtor"
@@ -34,7 +34,7 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
+            <InputField className="w-100">
               <label htmlFor="data">Data:</label>
               <Input
                 name="data"
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
 
           <div className={styles.row}>
-            <InputField>
+            <InputField className="w-500">
               <label htmlFor="municipio">Município:</label>
               <Input
                 id="municipio"
@@ -55,7 +55,7 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
+            <InputField className="w-100">
               <label htmlFor="lote">Lote:</label>
               <Input
                 id="lote"
@@ -64,8 +64,8 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
-              <label htmlFor="area_total">Área Total:</label>
+            <InputField className="w-200">
+              <label htmlFor="area_total">Área Total (ha):</label>
               <Input
                 id="area_total"
                 name="area_total"
@@ -76,7 +76,7 @@ export default function Home() {
           </div>
 
           <div className={styles.row}>
-            <InputField>
+            <InputField className="w-100">
               <label htmlFor="talhao">Talhão:</label>
               <Input
                 id="talhao"
@@ -85,7 +85,7 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
+            <InputField className="w-200">
               <label htmlFor="area_talhao">Área do talhão (ha):</label>
               <Input
                 id="area_talhao"
@@ -94,7 +94,7 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
+            <InputField className="w-200">
               <label htmlFor="matricula_lote">Matrícula do lote:</label>
               <Input
                 id="matricula_lote"
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
 
           <div className={styles.row}>
-            <InputField>
+            <InputField className="w-200">
               <label htmlFor="textura_solo">Textura do Solo:</label>
               <Input
                 id="textura_solo"
@@ -115,7 +115,7 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
+            <InputField className="w-200">
               <label htmlFor="sistema_cultivo">Sitema de cultivo:</label>
               <Input
                 id="sistema_cultivo"
@@ -127,7 +127,7 @@ export default function Home() {
           </div>
 
           <div className={styles.row}>
-            <InputField>
+            <InputField className="w-700">
               <label htmlFor="responsavel_tecnico">Responsável técnico:</label>
               <Input
                 id="responsavel_tecnico"
@@ -136,7 +136,9 @@ export default function Home() {
                 onChange={() => { }}
               />
             </InputField>
-            <InputField>
+          </div>
+          <div className={styles.row}>
+            <InputField className="w-500">
               <label htmlFor="profundidade_solo">Profundidade da amostra de solos (cm):</label>
               <Input
                 id="profundidade_solo"
@@ -147,7 +149,7 @@ export default function Home() {
             </InputField>
           </div>
           <div className={styles.row}>
-            <InputField>
+            <InputField className="w-300">
               <label htmlFor="resultado_analise_solo">Resultado da análise de solos Nº:</label>
               <Input
                 id="resultado_analise_solo"
