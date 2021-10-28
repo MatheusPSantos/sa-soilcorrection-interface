@@ -86,8 +86,41 @@ export default function CalcioMagnesio() {
             </div> */}
           </div>
         </Card>
+
         <Card className="w-350">
           <h2>Magnésio</h2>
+          <div className="col w-full">
+            <InputField className="w-full">
+              <label>Participação atual na CTC do solo (%):</label>
+              <Input
+                type="text"
+                placeholder="0,0%"
+                name=""
+                id=""
+              />
+            </InputField>
+
+            <InputField className="w-full">
+              <label>Participação ideal na CTC do solo (%):</label>
+              <Input
+                type="text"
+                placeholder="10% a 15%"
+                name=""
+                id=""
+                disabled
+              />
+            </InputField>
+
+            <InputField className="w-full">
+              <label>Participação após correção (%):</label>
+              <Input
+                type="text"
+                placeholder="0,0%"
+                name=""
+                id=""
+              />
+            </InputField>
+          </div>
         </Card>
       </section>
     </main>
