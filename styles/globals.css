@@ -30,6 +30,11 @@ a {
   width: calc(800px - 500px);
 }
 
+.w-350 {
+  position: relative;
+  width: calc(800px - 450px);
+}
+
 .w-400 {
   position: relative;
   width: calc(800px - 400px);
