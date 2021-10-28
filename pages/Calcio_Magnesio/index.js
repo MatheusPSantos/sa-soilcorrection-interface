@@ -1,7 +1,9 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Card } from '../../components/Card';
 import { Header } from '../../components/Header';
 import { Input, InputField } from '../../components/Input';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import styles from '../../styles/Home.module.css'
 
 export default function CalcioMagnesio() {
@@ -21,7 +23,8 @@ export default function CalcioMagnesio() {
     </Head>
 
     <Header>
-      Equilíbrio e correção de solo
+      <Link href="/"><a><AiOutlineArrowLeft /></a></Link>
+      <span>Equilíbrio e correção de solo</span>
     </Header>
 
     <div className={styles.container} >

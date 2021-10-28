@@ -1,6 +1,8 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Header } from '../../components/Header';
-import { Input, InputField } from '../../components/Input';
+import { Input, InputField } from '../../components/Input'
+import {AiOutlineArrowLeft} from 'react-icons/ai'
 import styles from '../../styles/Home.module.css'
 
 export default function Fosforo() {
@@ -24,8 +26,10 @@ export default function Fosforo() {
     <Head>
       <title>Equilíbrio e Correção de Fósforo</title>
     </Head>
+
     <Header>
-      Equilíbrio e correção de solo
+      <Link href="/"><a><AiOutlineArrowLeft /></a></Link>
+      <span>Equilíbrio e correção de solo</span>
     </Header>
 
     <div className={styles.container} >
