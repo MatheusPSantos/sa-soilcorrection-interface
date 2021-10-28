@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Header } from '../../components/Header';
 import { Input, InputField } from '../../components/Input';
 import styles from '../../styles/Home.module.css'
 
@@ -19,71 +20,76 @@ export default function Fosforo() {
     { "indice": 12, "fonte": "Multif.Magnesiano" }
   ];
 
-  return <div className={styles.container} >
+  return <>
     <Head>
       <title>Equilíbrio e Correção de Fósforo</title>
     </Head>
+    <Header>
+      Equilíbrio e correção de solo
+    </Header>
 
-    <main className={styles.main}>
-      <h1 className={styles.title}>
-        Correção/Recuperção de Fósforo
-      </h1>
+    <div className={styles.container} >
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Correção/Recuperção de Fósforo
+        </h1>
 
-      <section style={{ marginTop: "50px" }} className={styles.grid_left}>
-        <div className="col w-800">
-          <div className={styles.row}>
-            <InputField className="w-300">
-              <label>Teor de Fósforo a atingir (mg.dm³):</label>
-              <Input
-                id=""
-                name=""
-                type="text"
-              />
-            </InputField>
-            <InputField className="w-300">
-              <label>Fonte de Fósforo a utilizar:</label>
-              <select
-                style={{ height: "30px" }}
-              >
-                { fontesDeFosforo.map((fonte, index) => {
-                  return <option key={index}>{fonte.indice} - {fonte.fonte}</option>
-                }) }
-              </select>
-            </InputField>
-          </div>
-          <div className="row">
-            <InputField className="w-300">
-              <label>Quantidade a aplicar (kg/hectare):</label>
-              <Input
-                id=""
-                name=""
-                type="text"
-              />
-            </InputField>
-            <InputField className="w-300">
-              <label>Custo (R$/h1):</label>
-              <Input
-                placeholder="0,00"
-                type="text"
-                name=""
-                id=""
-              />
-            </InputField>
-          </div>
+        <section style={{ marginTop: "50px" }} className={styles.grid_left}>
+          <div className="col w-800">
+            <div className={styles.row}>
+              <InputField className="w-300">
+                <label>Teor de Fósforo a atingir (mg.dm³):</label>
+                <Input
+                  id=""
+                  name=""
+                  type="text"
+                />
+              </InputField>
+              <InputField className="w-300">
+                <label>Fonte de Fósforo a utilizar:</label>
+                <select
+                  style={{ height: "30px" }}
+                >
+                  {fontesDeFosforo.map((fonte, index) => {
+                    return <option key={index}>{fonte.indice} - {fonte.fonte}</option>
+                  })}
+                </select>
+              </InputField>
+            </div>
+            <div className="row">
+              <InputField className="w-300">
+                <label>Quantidade a aplicar (kg/hectare):</label>
+                <Input
+                  id=""
+                  name=""
+                  type="text"
+                />
+              </InputField>
+              <InputField className="w-300">
+                <label>Custo (R$/h1):</label>
+                <Input
+                  placeholder="0,00"
+                  type="text"
+                  name=""
+                  id=""
+                />
+              </InputField>
+            </div>
 
-          <div className="row">
-            <InputField className="w-300">
-              <label>Eficiência do Fosforo %:</label>
-              <Input
-                type="text"
-                placeholder="70%"
-                name=""
-                id=""
-              />
-            </InputField>
+            <div className="row">
+              <InputField className="w-300">
+                <label>Eficiência do Fosforo %:</label>
+                <Input
+                  type="text"
+                  placeholder="70%"
+                  name=""
+                  id=""
+                />
+              </InputField>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
-  </div>;
+        </section>
+      </main>
+    </div>
+  </>;
 }
