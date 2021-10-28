@@ -8,9 +8,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Equilíbrio e Correção de solo</title>
-        <meta name="description" content="Aplicação para gerenciamento do equilíbrio e correção de solo." />
-        <link rel="icon" href="/projeto_graos_logo.png" />
+        <title>Equilíbrio e Correção de solo</title>      
       </Head>
 
       <main className={styles.main}>
