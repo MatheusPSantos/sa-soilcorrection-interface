@@ -55,6 +55,11 @@ a {
   width: calc(800px - 00px);
 }
 
+.w-full {
+  position: relative;
+  width: 100%;
+}
+
 .col {
   display: flex;
   flex-direction: column;
