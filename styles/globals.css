@@ -14,3 +14,43 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.w-100 {
+  position: relative;
+  width: calc(800px - 700px);
+}
+
+.w-200 {
+  position: relative;
+  width: calc(800px - 600px);
+}
+
+.w-300 {
+  position: relative;
+  width: calc(800px - 500px);
+}
+
+.w-400 {
+  position: relative;
+  width: calc(800px - 400px);
+}
+
+.w-500 {
+  position: relative;
+  width: calc(800px - 300px);
+}
+
+.w-600 {
+  position: relative;
+  width: calc(800px - 200px);
+}
+
+.w-700 {
+  position: relative;
+  width: calc(800px - 100px);
+}
+
+.w-800 {
+  position: relative;
+  width: calc(800px - 00px);
+}
