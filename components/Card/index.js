@@ -9,7 +9,6 @@ export const Card = styled.div`
     border: 1px solid #eaeaea;
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.15s ease;
-    max-width: 300px;
   
     &:hover,
     &:focus,
