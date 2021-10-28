@@ -73,6 +73,14 @@
   max-width: 800px;
 }
 
+.grid-left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
