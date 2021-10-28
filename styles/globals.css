@@ -54,3 +54,14 @@ a {
   position: relative;
   width: calc(800px - 00px);
 }
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
