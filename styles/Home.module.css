@@ -73,7 +73,7 @@
   max-width: 800px;
 }
 
-.grid-left {
+.grid_left {
   display: flex;
   align-items: center;
   justify-content: left;
