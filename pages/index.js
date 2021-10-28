@@ -20,7 +20,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Correções e recuperações por meterial.
+          Correções e recuperações por material.
         </p>
 
         <section className={styles.grid_left}>
@@ -161,7 +161,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className={styles.row}>
+        <div className={styles.row} style={{marginTop: "50px"}}>
           <Link href="/Fosforo">
             <a className={styles.card}>
               <h2>Correção/Recuperação de Fósforo &rarr;</h2>
