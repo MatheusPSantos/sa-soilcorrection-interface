@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Input, InputField } from '../components/Input'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -21,6 +22,142 @@ export default function Home() {
         <p className={styles.description}>
           Correções e recuperações por meterial.
         </p>
+
+        <section className={styles.grid_left}>
+          <div className={styles.row}>
+            <InputField>
+              <label htmlFor="produtor">Produtor:</label>
+              <Input
+                name="produtor"
+                id="produtor"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="data">Data:</label>
+              <Input
+                name="data"
+                id="data"
+                type="date"
+                onChange={() => { }}
+              />
+            </InputField>
+          </div>
+
+          <div className={styles.row}>
+            <InputField>
+              <label htmlFor="municipio">Município:</label>
+              <Input
+                id="municipio"
+                name="municipio"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="lote">Lote:</label>
+              <Input
+                id="lote"
+                name="lote"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="area_total">Área Total:</label>
+              <Input
+                id="area_total"
+                name="area_total"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+          </div>
+
+          <div className={styles.row}>
+            <InputField>
+              <label htmlFor="talhao">Talhão:</label>
+              <Input
+                id="talhao"
+                name="talhao"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="area_talhao">Área do talhão (ha):</label>
+              <Input
+                id="area_talhao"
+                name="area_talhao"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="matricula_lote">Matrícula do lote:</label>
+              <Input
+                id="matricula_lote"
+                name="matricula_lote"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+          </div>
+
+          <div className={styles.row}>
+            <InputField>
+              <label htmlFor="textura_solo">Textura do Solo:</label>
+              <Input
+                id="textura_solo"
+                name="textura_solo"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="sistema_cultivo">Sitema de cultivo:</label>
+              <Input
+                id="sistema_cultivo"
+                name="sistema_cultivo"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+          </div>
+
+          <div className={styles.row}>
+            <InputField>
+              <label htmlFor="responsavel_tecnico">Responsável técnico:</label>
+              <Input
+                id="responsavel_tecnico"
+                name="responsavel_tecnico"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+            <InputField>
+              <label htmlFor="profundidade_solo">Profundidade da amostra de solos (cm):</label>
+              <Input
+                id="profundidade_solo"
+                name="profundidade_solo"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+          </div>
+          <div className={styles.row}>
+            <InputField>
+              <label htmlFor="resultado_analise_solo">Resultado da análise de solos Nº:</label>
+              <Input
+                id="resultado_analise_solo"
+                name="resultado_analise_solo"
+                type="text"
+                onChange={() => { }}
+              />
+            </InputField>
+          </div>
+        </section>
 
         <div className={styles.grid}>
           <Link href="/Fosforo">
