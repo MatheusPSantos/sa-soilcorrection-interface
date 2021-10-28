@@ -161,7 +161,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className={styles.grid}>
+        <div className={styles.row}>
           <Link href="/Fosforo">
             <a className={styles.card}>
               <h2>Correção/Recuperação de Fósforo &rarr;</h2>
