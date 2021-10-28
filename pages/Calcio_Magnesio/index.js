@@ -71,19 +71,6 @@ export default function CalcioMagnesio() {
                 />
               </InputField>
             </div>
-
-            {/* <div className="row">
-              <InputField className="">
-                <label>Fonte de Potássio a utilizar: </label>
-                <select
-                  style={{ height: "30px" }}
-                >
-                  {fontesDeCalcioMagnesio.map((fonte, index) => {
-                    return <option key={index}>{fonte.indice} - {fonte.fonte}</option>
-                  })}
-                </select>
-              </InputField>
-            </div> */}
           </div>
         </Card>
 
@@ -121,6 +108,74 @@ export default function CalcioMagnesio() {
               />
             </InputField>
           </div>
+        </Card>
+      </section>
+
+      <section className="row w-800">
+        <Card className="row">
+        <div className="col w-350">
+          <InputField className="w-300">
+            <label>Fonte de Corretivo a usar:</label>
+            <select
+              style={{ height: "30px" }}
+            >
+              {fontesDeCalcioMagnesio.map((fonte, index) => {
+                return <option key={index}>{fonte.indice} - {fonte.fonte}</option>
+              })}
+            </select>
+          </InputField>
+
+          <InputField className="w-full">
+            <label>PRNT (%):</label>
+            <Input
+              type="text"
+              disabled
+            />
+          </InputField>
+
+          <InputField className="w-full">
+              <label>Teor de CaO do corretivo (%):</label>
+              <Input type="text" disabled/>
+          </InputField>
+
+          <InputField className="w-full">
+            <label>Quantidade a aplicar (Ton./ha):</label>
+            <Input type="text" name="" id="" />
+          </InputField>
+
+          <InputField className="w-full">
+            <label>Custo (R$/ha):</label>
+            <Input type="text" disabled name="" id="" />
+          </InputField>
+        </div>
+        
+        <div className="col w-350">
+          <h3>V%</h3>
+          <InputField>
+              <label>Atual</label>
+              <Input
+                type="text"                
+                placeholder="0%"              
+              />
+          </InputField>
+          
+          <InputField>
+              <label>Ideal</label>
+              <Input
+                type="text"                
+                placeholder="60% a 70%"              
+                disabled
+              />
+          </InputField>
+          
+          <InputField>
+              <label>Após a correção</label>
+              <Input
+                type="text"                
+                placeholder="0%"              
+              />
+          </InputField>
+        </div>
         </Card>
       </section>
     </main>
