@@ -13,8 +13,8 @@ export const Card = styled.div`
     &:hover,
     &:focus,
     &:active {
-        color: #0070f3;
-        border-color: #0070f3;
+        color: rgba(0,0,0,0.7);
+        border-color: rgba(0,0,0,0.6);
     }
   
     h2 {
