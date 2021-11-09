@@ -57,3 +57,16 @@ npm start
 ```
 
 A url padrão do projeto é [http://localhost:3000](http://localhost:3000), você pode acessá-la pelo navegador e começar a utilizar a aplicação.
+
+## Testes
+
+O projeto utiliza a biblitoca open source `Cypress` para realizar teste de interface, integração, dentre outros. A biblioteca pode ser consultada em [https://docs.cypress.io/guides/overview/why-cypress/](https://docs.cypress.io/guides/overview/why-cypress/).
+
+Para rodar os testes em ambiente local é preciso rodar os seguintes comandos no terminal:
+```bash
+yarn run test
+```
+
+Esse comando faz a `build` do projeto e após isso o executa. Logo em seguida o mesmo comando roda o comando nativo do cypress `cypress open` que por sua vez abre o ambiente de desenvolvimento do Cypress para realizar os teste na url `http://localhost:8080`.
+
+Ao abrir a URL será mostrado uma janela com os testes escritos, o usuário pode clicar em um deles para ver os resultados do teste.
