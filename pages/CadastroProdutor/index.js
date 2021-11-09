@@ -5,23 +5,44 @@ import Link from "next/link"
 import { Header } from "../../components/Header";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { ButtonSubmit } from "../../components/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { lerCadastroDoProdutor, letCadastroDoProdutor, salvarCadastroDoProdutor } from "../../services/CadastroDoProdutor";
 
 export default function CadastroProdutor() {
-
+	const [cadastroDoProdutor, setCadastroDoProdutor] = useState(null);
 	const [produtor, setProdutor] = useState('');
 	const [data, setData] = useState(new Date().toLocaleDateString('pt-br'));
 	const [municipio, setMunicipio] = useState('');
 	const [lote, setLote] = useState('');
-	const [areaTotal, setAreaTotal] = useState();
-	const [talhao, setTalhao] = useState();
-	const [areaTalhao, setAreaTalhao] = useState();
-	const [matriculaLote, setMatriculaLote] = useState();
-	const [texturaSolo, setTexturaSolo] = useState();
-	const [sistemaCultivo, setSistemCultivo] = useState();
-	const [responsavelTecnico, setResponsavelTecnico] = useState();
-	const [profundidade, setProfundidade] = useState();
-	const [resultadoAnalise, setResultadoAnalise] = useState();
+	const [areaTotal, setAreaTotal] = useState('');
+	const [talhao, setTalhao] = useState('');
+	const [areaTalhao, setAreaTalhao] = useState('');
+	const [matriculaLote, setMatriculaLote] = useState('');
+	const [texturaSolo, setTexturaSolo] = useState('');
+	const [sistemaCultivo, setSistemCultivo] = useState('');
+	const [responsavelTecnico, setResponsavelTecnico] = useState('');
+	const [profundidade, setProfundidade] = useState('');
+	const [resultadoAnalise, setResultadoAnalise] = useState('');
+
+	useEffect(() => {
+		let cadastroSalvo = lerCadastroDoProdutor();
+		if (cadastroSalvo) {
+			setProdutor(cadastroSalvo.produtor);
+			setData(cadastroSalvo.data);
+			setMunicipio(cadastroSalvo.municipio);
+			setLote(cadastroSalvo.lote);
+			setAreaTotal(cadastroSalvo.areaTotal);
+			setTalhao(cadastroSalvo.talhao);
+			setAreaTalhao(cadastroSalvo.areaTalhao);
+			setMatriculaLote(cadastroSalvo.matriculaLote);
+			setTexturaSolo(cadastroSalvo.texturaSolo);
+			setSistemCultivo(cadastroSalvo.sistemaCultivo);
+			setResponsavelTecnico(cadastroSalvo.responsavelTecnico);
+			setProfundidade(cadastroSalvo.profundidade);
+			setResultadoAnalise(cadastroSalvo.resultadoAnalise);
+			setCadastroDoProdutor(cadastroSalvo);
+		}
+	}, []);
 
 	function submiterCadastro(event) {
 		event.preventDefault();
@@ -40,8 +61,16 @@ export default function CadastroProdutor() {
 			profundidade,
 			resultadoAnalise,
 		};
+		
+		if (checkIfIsDifferent(cadastroDoProdutor, dataObject)) {
+			salvarCadastroDoProdutor(dataObject);
+		} else {
+			console.error('Não existe alterações');
+		}
+	}
 
-		console.log(dataObject);
+	function checkIfIsDifferent(cadastro, obj) {
+		return JSON.stringify(cadastro) !== JSON.stringify(obj);
 	}
 
 	return <>
