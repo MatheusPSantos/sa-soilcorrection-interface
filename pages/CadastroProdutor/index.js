@@ -4,9 +4,46 @@ import Head from "next/head"
 import Link from "next/link"
 import { Header } from "../../components/Header";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { Button } from "../../components/Button";
+import { ButtonSubmit } from "../../components/Button";
+import { useState } from "react";
 
 export default function CadastroProdutor() {
+
+	const [produtor, setProdutor] = useState('');
+	const [data, setData] = useState(new Date().toLocaleDateString('pt-br'));
+	const [municipio, setMunicipio] = useState('');
+	const [lote, setLote] = useState('');
+	const [areaTotal, setAreaTotal] = useState();
+	const [talhao, setTalhao] = useState();
+	const [areaTalhao, setAreaTalhao] = useState();
+	const [matriculaLote, setMatriculaLote] = useState();
+	const [texturaSolo, setTexturaSolo] = useState();
+	const [sistemaCultivo, setSistemCultivo] = useState();
+	const [responsavelTecnico, setResponsavelTecnico] = useState();
+	const [profundidade, setProfundidade] = useState();
+	const [resultadoAnalise, setResultadoAnalise] = useState();
+
+	function submiterCadastro(event) {
+		event.preventDefault();
+		const dataObject = {
+			produtor,
+			data,
+			municipio,
+			lote,
+			areaTotal,
+			talhao,
+			areaTalhao,
+			matriculaLote,
+			texturaSolo,
+			sistemaCultivo,
+			responsavelTecnico,
+			profundidade,
+			resultadoAnalise,
+		};
+
+		console.log(dataObject);
+	}
+
 	return <>
 		<Head>
 			<title>Cadastro do Produtor</title>
@@ -21,7 +58,7 @@ export default function CadastroProdutor() {
 			<main className={styles.main}>
 				<section className={styles.grid_left}>
 
-					<form>
+					<form onSubmit={submiterCadastro} method="POST">
 						<div className={styles.row}>
 							<InputField className="w-700">
 								<label htmlFor="produtor">Produtor:</label>
@@ -29,7 +66,8 @@ export default function CadastroProdutor() {
 									name="produtor"
 									id="produtor"
 									type="text"
-									onChange={() => { }}
+									value={produtor}
+									onChange={(event) => setProdutor(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-100">
@@ -38,7 +76,8 @@ export default function CadastroProdutor() {
 									name="data"
 									id="data"
 									type="date"
-									onChange={() => { }}
+									value={new Date(data).toJSON().split('T')[0]}
+									onChange={(event) => setData(new Date(event.target.value).toLocaleDateString("pt-br"))}
 								/>
 							</InputField>
 						</div>
@@ -50,7 +89,8 @@ export default function CadastroProdutor() {
 									id="municipio"
 									name="municipio"
 									type="text"
-									onChange={() => { }}
+									value={municipio}
+									onChange={(event) => setMunicipio(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-100">
@@ -59,7 +99,8 @@ export default function CadastroProdutor() {
 									id="lote"
 									name="lote"
 									type="text"
-									onChange={() => { }}
+									value={lote}
+									onChange={(event) => setLote(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-200">
@@ -68,7 +109,8 @@ export default function CadastroProdutor() {
 									id="area_total"
 									name="area_total"
 									type="text"
-									onChange={() => { }}
+									value={areaTotal}
+									onChange={(event) => setAreaTotal(event.target.value)}
 								/>
 							</InputField>
 						</div>
@@ -80,7 +122,8 @@ export default function CadastroProdutor() {
 									id="talhao"
 									name="talhao"
 									type="text"
-									onChange={() => { }}
+									value={talhao}
+									onChange={(event) => areaTalhao(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-200">
@@ -89,7 +132,8 @@ export default function CadastroProdutor() {
 									id="area_talhao"
 									name="area_talhao"
 									type="text"
-									onChange={() => { }}
+									value={areaTalhao}
+									onChange={(event) => setAreaTalhao(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-200">
@@ -98,7 +142,8 @@ export default function CadastroProdutor() {
 									id="matricula_lote"
 									name="matricula_lote"
 									type="text"
-									onChange={() => { }}
+									value={matriculaLote}
+									onChange={(event) => setMatriculaLote(event.target.value)}
 								/>
 							</InputField>
 						</div>
@@ -110,7 +155,8 @@ export default function CadastroProdutor() {
 									id="textura_solo"
 									name="textura_solo"
 									type="text"
-									onChange={() => { }}
+									value={texturaSolo}
+									onChange={(event) => texturaSolo(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-200">
@@ -119,7 +165,8 @@ export default function CadastroProdutor() {
 									id="sistema_cultivo"
 									name="sistema_cultivo"
 									type="text"
-									onChange={() => { }}
+									value={sistemaCultivo}
+									onChange={(event) => setSistemCultivo(event.target.value)}
 								/>
 							</InputField>
 						</div>
@@ -131,7 +178,8 @@ export default function CadastroProdutor() {
 									id="responsavel_tecnico"
 									name="responsavel_tecnico"
 									type="text"
-									onChange={() => { }}
+									value={responsavelTecnico}
+									onChange={(event) => setResponsavelTecnico(event.target.value)}
 								/>
 							</InputField>
 						</div>
@@ -142,7 +190,8 @@ export default function CadastroProdutor() {
 									id="profundidade_solo"
 									name="profundidade_solo"
 									type="text"
-									onChange={() => { }}
+									value={profundidade}
+									onChange={(event) => setProfundidade(event.target.value)}
 								/>
 							</InputField>
 						</div>
@@ -153,12 +202,13 @@ export default function CadastroProdutor() {
 									id="resultado_analise_solo"
 									name="resultado_analise_solo"
 									type="text"
-									onChange={() => { }}
+									value={resultadoAnalise}
+									onChange={(event) => setResultadoAnalise(event.target.value)}
 								/>
 							</InputField>
 						</div>
 						<div className={styles.row}>
-							<Button>Salvar</Button>
+							<ButtonSubmit type="submit" value="Salvar dados" />
 						</div>
 
 					</form>
