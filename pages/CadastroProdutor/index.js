@@ -6,7 +6,7 @@ import { Header } from "../../components/Header";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { ButtonSubmit } from "../../components/Button";
 import { useEffect, useState } from "react";
-import { lerCadastroDoProdutor, letCadastroDoProdutor, salvarCadastroDoProdutor } from "../../services/CadastroDoProdutor";
+import { lerCadastroDoProdutor, salvarCadastroDoProdutor } from "../../services/CadastroDoProdutor";
 
 export default function CadastroProdutor() {
 	const [cadastroDoProdutor, setCadastroDoProdutor] = useState(null);
@@ -61,11 +61,13 @@ export default function CadastroProdutor() {
 			profundidade,
 			resultadoAnalise,
 		};
-		
+
 		if (checkIfIsDifferent(cadastroDoProdutor, dataObject)) {
 			salvarCadastroDoProdutor(dataObject);
+			setCadastroDoProdutor(lerCadastroDoProdutor());
+			window.alert('Dados salvos corretamente');
 		} else {
-			console.error('Não existe alterações');
+			window.alert('Sem alterações para salvar');
 		}
 	}
 
@@ -152,7 +154,7 @@ export default function CadastroProdutor() {
 									name="talhao"
 									type="text"
 									value={talhao}
-									onChange={(event) => areaTalhao(event.target.value)}
+									onChange={(event) => setTalhao(event.target.value)}
 								/>
 							</InputField>
 							<InputField className="w-200">
